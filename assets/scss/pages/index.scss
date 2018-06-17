@@ -12,6 +12,9 @@ body {
 input , select {
 	box-sizing: border-box;
 }
+a {
+	text-decoration: none;
+}
 
 header {
 	nav {
@@ -206,81 +209,163 @@ main {
 	}
 
 
-	article {
-		margin: 24px 40px 0px 40px;
-		display:flex;
-		background-color: #fff;
-		box-shadow: 3px 3px 9px 3px #DDD;
+	.breadcrumb {
+		ul {
+			margin-left: 40px;
+    		margin-right: 40px;
+    		margin-top: 24px;
+    		font-size:0px;
+    		list-style:none;
+    		padding-left: 16px;
+    		background: $side-block-color;
+    		border-radius: 4px;
+    		height: 48px;
+    		line-height:48px;
 
-		&:hover {
-			box-shadow: 3px 3px 9px 3px #AAA;
-		}
-		picture {
-			width: 220px;
-		    padding-bottom: 220px;
-		    background-size: cover;
-		    background-position: center;
-		    background-repeat: no-repeat;
-		    display: inline-block;
-			flex: 0 0 auto;
-		}
-		.content {
-			padding:0px 20px;
-			h2 {
-				font-family: "Roboto";
-				font-weight: bold;
-				font-size: 24px;
-				color: $main-color-2;
-				line-height: 36px;
-			}
-			.desc {
-				p {
-					margin:0px;
-					padding:0px;
-				}
+    		li {
 				font-size: 16px;
-				color: #000000;
-				line-height: 24px;
-				height:48px;
-				overflow:hidden;
-				@include multiple-ellipsis(2);
-			}
+				color: $gray_light;
+				letter-spacing: 0;
+				line-height: 48px;
+				display: inline-block;
 
-			.extra-data {
-				margin-top: 15px;
-				.organizer {
-					font-weight:bold;
-				}
-				.tag-pool {
-					display:inline-block;
-					margin-left:36px;
-					.tag {
-						font-family: Roboto;
-						font-style: italic;
-						font-size: 16px;
-						color: #FFFFFF;
-						text-align: center;
-
-						background-color: $gray_dark;
-						padding:5px 10px;
-						margin-right: 5px;
-						border-radius: 13px;
+				& + li {
+					&:before {
+						content: "/";
+						width: 23px;
+    					display: inline-block;
+    					text-align: center;
 					}
 				}
 
-				.locate , .datetime {
+				a {
+					color: $main-color-2;
+				}
+    		}
+		}
+	}
+	article {
+
+		&.card {
+
+
+			margin: 24px 40px 0px 40px;
+			display:flex;
+			background-color: #fff;
+			box-shadow: 3px 3px 9px 3px #DDD;
+
+			* {
+				cursor:pointer;
+			}
+
+			&:hover {
+				box-shadow: 3px 3px 9px 3px #AAA;
+			}
+			picture {
+				width: 220px;
+			    padding-bottom: 220px;
+			    background-size: cover;
+			    background-position: center;
+			    background-repeat: no-repeat;
+			    display: inline-block;
+				flex: 0 0 auto;
+			}
+			.content {
+				padding:0px 20px;
+				h2 {
+					font-family: "Roboto";
+					font-weight: bold;
+					font-size: 24px;
+					color: $main-color-2;
+					line-height: 36px;
+				}
+				.desc {
+					p {
+						margin:0px;
+						padding:0px;
+					}
 					font-size: 16px;
-					color: $gray_light;
-				}
-				.datetime {
-					margin-left: 20px;
-				}
-				i {
-					padding-right: 5px;
+					color: #000000;
+					line-height: 24px;
+					height:48px;
+					overflow:hidden;
+					@include multiple-ellipsis(2);
 				}
 			}
 		}
+
+		&.article-detail {
+			background-color: #fff;
+			margin: 24px 40px 0px 40px;
+
+
+			picture {
+			    width: 100%;
+			    padding-bottom: 55%;
+			    background-size: cover;
+			    background-position: center;
+			    background-repeat: no-repeat;
+			    display: inline-block;
+			    flex: 0 0 auto;
+			}
+			h1 {
+				font-weight:bold;
+				font-size: 36px;
+				color: $main-color-2;
+				line-height: 36px;
+			}
+
+			.container {
+				margin-left:66px;
+				margin-right:66px;
+				margin-bottom:24px;
+				.detail-content {
+					margin-top: 24px;
+					padding-bottom: 24px;
+					font-size: 16px;
+					color: #000000;
+					line-height: 24px;
+				}
+			}
+		}
+
+
+		.extra-data {
+			margin-top: 15px;
+			.organizer {
+				font-weight:bold;
+			}
+			.tag-pool {
+				display:inline-block;
+				margin-left:36px;
+				.tag {
+					font-family: Roboto;
+					font-style: italic;
+					font-size: 16px;
+					color: #FFFFFF;
+					text-align: center;
+
+					background-color: $gray_dark;
+					padding:5px 10px;
+					margin-right: 5px;
+					border-radius: 13px;
+				}
+			}
+
+			.locate , .datetime {
+				font-size: 16px;
+				color: $gray_light;
+			}
+			.datetime {
+				margin-left: 20px;
+			}
+			i {
+				color: #000;
+				padding-right: 5px;
+			}
+		}
 	}
+
 
 	.pagi-block{
 		margin-top:24px;
@@ -305,9 +390,6 @@ main {
 			    line-height: 40px;
 			    text-align: center;
 
-				a {
-					text-decoration: none;
-				}
 				&.active {
 					background: $main-color-2;
 					border: 1px solid $main-color-2;
@@ -345,4 +427,11 @@ main {
 	.flex-right {
 		flex: 1 1 auto;
 	}
+}
+.text-justify {
+	text-align: justify;
+	text-justify: inter-ideograph;
+	-ms-text-justify: inter-ideograph; /*IE9*/
+	-moz-text-align-last:justify;      /*Firefox*/
+	-webkit-text-align-last:justify;   /*Chrome*/
 }

@@ -27,7 +27,7 @@
   <![endif]-->
   <header>
     <nav class="flex-container">
-      <div class="flex-left main-logo"><img src="https://hexschool.github.io/THE_F2E_Design/week2-filter/assets/logo.svg" alt="Have Fun"></div>
+      <div class="flex-left main-logo"><a href="https://vandyke-beard.github.io/HyperbolicTimeChamber-No.2-filter/"><img src="https://hexschool.github.io/THE_F2E_Design/week2-filter/assets/logo.svg" alt="Have Fun"></a></div>
       <div class="flex-right main-search">
         <div class="main-search-outline">
           <i class="fas fa-search"></i><input placeholder="explore your own activities" />
@@ -84,7 +84,7 @@
             <span class="tag-btn">Entertainment<i class="far fa-times-circle"></i></span>
         </div>
         <section>
-          <article>
+          <article data-uid="1" class="card link-block">
             <picture style="background-image: url(https://images.pexels.com/photos/733871/pexels-photo-733871.jpeg?auto=compress&cs=tinysrgb&h=650&w=940);"></picture>
             <div class="content">
               <h2>Kogi Cosby sweater ethical.</h2>
@@ -99,7 +99,7 @@
               </div>
             </div>
           </article>
-          <article>
+          <article data-uid="2" class="card link-block">
             <picture style="background-image: url(https://images.pexels.com/photos/1109763/pexels-photo-1109763.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);"></picture>
             <div class="content">
               <h2>Kogi Cosby sweater ethical.</h2>
@@ -114,7 +114,7 @@
               </div>
             </div>
           </article>
-          <article>
+          <article data-uid="3" class="card link-block">
             <picture style="background-image: url(https://images.pexels.com/photos/518242/pexels-photo-518242.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);"></picture>
             <div class="content">
               <h2>Kogi Cosby sweater ethical.</h2>
@@ -154,7 +154,11 @@
   <script src="assets/js/plugins.js"></script>
   <script src="assets/js/main.js"></script>
 
-  
+  <script>
+    $("article.link-block").on('click' , function(){
+      location.href= "/detail.html";
+    })
+  </script>
 </body>
 
 </html>
